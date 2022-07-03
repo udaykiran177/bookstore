@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        payment
+    </title>
+    <script type="text/javascript" src="jqery.js"></script>
+    <style>
+        fieldset {
+            
+            border-color: aqua;
+            margin-right:  25px;
+            margin-left: 25px;
+            background-color: rgba(245, 245, 245, 0.405);
+            border-radius: 4px;
+            padding: 20px;
+            text-align: justify;
+            font-weight: bold;
+            padding: 20px;
+        }
+        h1{
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: 25px;
+            margin-right: 25px;
+            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+            padding: 25px;
+        }
+        legend {
+            background-color: rgba(143, 215, 208, 0.751);
+            color: rgb(255, 255, 255);
+            margin: 10px;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        table,
+        td {
+            margin: 5px;
+            padding: 20px;
+            text-align: justify;
+
+        }
+
+        button {
+            background-color: rgba(109, 255, 126, 0.86);
+            padding:5px;
+            border-radius:5px;
+            /*background-clip: border-box;*/
+        }
+
+        button:hover {
+            background-color: rgba(45, 248, 9, 0.974);
+            cursor: pointer;
+            border-radius: 1px;
+            /* padding: 10px; */
+            transition: 0.5s;
+        }
+
+       button:not(:hover){
+           transition: 0.5s;
+       }
+
+        input {
+
+            margin-left: 10px;
+        }
+
+        body {
+            /* background: url('Capture.jpg');
+            background-color: rgba(255, 255, 255, 0.9);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: lighten;
+            background-size: 700px; */
+            background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        #suc {
+
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            transition: .5s ease;
+        }
+    </style>
+    <script>
+        function suc() {
+            alert("Thanks For choosing The Book Mart");
+            document.getElementById("suc").style.display = "block";
+            document.getElementById("suc").style.transition = "0.5s";
+            return false;
+            /* document.getElementById("suc").style.transition="0.5s"; */
+        }
+        function fai() {
+            document.getElementById("suc").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="h1" style="text-align:center;font-family:Georgia, 'Times New Roman', Times, serif">The Book Store.com
+        <br>
+    </h1>
+    <hr>
+    <form onsubmit="return suc()">
+
+        <fieldset>
+            <legend>Coustumer Details</legend><br>
+
+            <label for="name">Enter Your Name</label>
+            <input name="name" type="text" placeholder="Enter name" required><br><br>
+            <label for="mobile">Enter Your Mobile Number</label>
+            <input for="mobile" type="tel" placeholder="Enter mobile  requirednumber" required><br><br>
+            <label for="address">Enter Your Delivery Address</label>
+            <input name="address" type="text" placeholder="Enter postal  requiredaddress" required><br><br>
+            <label for="city">City/District name</label>
+            <input name="city" type="text" placeholder="city/district required" required><br><br>
+            <label for="state">Select State</label>
+            <select name="state" title="select state" required>
+                <option value="sel" selected disabled>SELECT STATE</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh	">Chattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+            </select><br><br>
+
+            </tr>
+            </table>
+
+        </fieldset>
+        <div id="suc">
+            <fieldset style="background-color:rgba(255, 255, 255);margin: 150px;">
+                <img src="giphy.gif" alt="not loaded"><br>
+                <h1 style="text-align: center;text-shadow: #96e6a1;color: white;">Congratulations , Your Order Placed
+                    Successfully<span><br>You can close the Window Now...</span></h1>
+            </fieldset>
+        </div>
+        <br><br><br><br>
+        <fieldset>
+            <legend>Order Details</legend>
+            <label for="name">Book Name </label>
+            <input name="name" type="text" placeholder="Book Name" required><br><br>
+            <label for="qnty">Enter Quantity</label>
+            <input name="qnty" type="number" placeholder="No of Copies" required><br><Br>
+            <label for="amount">Total amount</label>
+            <input name="amount" type="number" placeholder="Total amount" required>
+        </fieldset>
+        <br><br><br><br>
+        <fieldset>
+            <legend>Payent Details</legend>
+            <label for="credit">
+                <h4>Credit/Debit Card Number
+            </label>
+            <input type="number" name="credit" required></h4>
+            <label for="amount">
+                <h4>Enter The Amount
+            </label>
+            <input for="amount" type="number" required></h4>
+            <!-- <script>
+                $(document).ready(function(){
+                    $("button").click(function()
+                    {
+                        alert("your order is placed suceesfully");
+                    });
+                }
+                );
+            </script> -->
+            <button type="submit">Pay</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

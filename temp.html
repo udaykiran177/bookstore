@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        mainpage
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=Rajdhani&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <!-- <script type="text/javascript" src="jqery.js"></script> -->
+    <style>
+        * {
+            top: 0px;
+            bottom: 0px;
+        }
+
+        table {
+            border: 2px solid rgba(0, 0, 0, 0.171);
+            border-collapse: collapse;
+            text-align: justify;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button:not(:hover) {
+            transition: 0.5s;
+        }
+
+        td,
+        th {
+            border: 2px solid rgba(0, 0, 0, 0.177);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        a:hover {
+            background-color: aqua;
+            transition: 0.5s;
+        }
+
+        /* button::after{
+            content: '00bb';
+            padding-left: 10px;
+            transition: 0.5s;
+        } */
+        tr:hover {
+            background-color: rgb(211, 221, 229, 0.3);
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: rgb(226, 244, 244, 0.7);
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            padding: 7px;
+            transition: 0.35s;
+        }
+
+        a {
+
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            /* padding-top: 90px; */
+            /* margin: 10px; */
+            background-color: rgba(158, 247, 255, 0.5);
+        }
+
+        h1,
+        h2,
+        h3 {
+            display: inline-flexbox;
+        }
+
+        /* button {
+            padding-right: 10px;
+        } */
+        img,
+        h1 {
+            display: flow-root;
+            color: #2f4f4f;
+        }
+
+        body {
+
+            background-image: url("homeback.jpg");
+            background-color: rgba(255, 255, 255, 0.9);
+            background-blend-mode: lighten;
+            background-repeat: no-repeat;
+
+
+        }
+
+        #menubar {
+            top: 0px;
+            margin-top: 0px;
+            background-image: linear-gradient(to top right, #7dafc2, #2f4f4f);
+        }
+
+        img {
+            margin: 0px;
+            float: right;
+            width: 150px;
+        }
+
+        fieldset {
+            margin-top: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: whitesmoke;
+            border-color: gold;
+            border-radius: 5px;
+            background-image: linear-gradient(to right top, #7169F6,  #beffb9);
+        }
+
+        span {
+            color: whitesmoke;
+        }
+    </style>
+    <script type="text/javascript">
+        function avail() {
+
+            var i, tr = document.getElementsByTagName("tr");
+            var len = tr.length;
+            for (i = 0; i < len; i++) {
+                td = tr[i].document.getElementsByTagName("td")[8];
+                if (td.value == "Unavailable") {
+                    tr[i].document.getElementById("but").style.color = "red";
+                }
+            }
+
+        }
+        /* function search() {
+            var sear = document.getElementById("sear");
+            var nam = sear.value.toUpperCase();
+            var table = document.getElementById("tab");
+            var tabv = table.getElementsByTagName("tr");
+            for (var i = 0; i < tabv.length; i++) {
+                var ele = tabv[i].getElementsByTagName("tr")[0];
+                if (ele) {
+                    var v = td.textContent || td.innerText;
+                    if (v.toUpperCase().indexOf(nam) > -1) {
+                        tabv[i].style.display = "";
+                    }
+                    else {
+                        tabv[i].style.display = "none";
+                    }
+                }
+            }
+        } */
+        function search() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("sear");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tab");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.value;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="avail()">
+    <div id="menubar">
+        <img src="logo.jpeg" style="width: 100px;height
+    :1-0px;display: inline;padding-top: 15px;float: left;">
+        <!-- <H1 style="text-align: center;">Welcome To The Book Mart</H1> -->
+
+        <!-- <h1 style="padding-top: 10px;display: inline;color: rgb(0, 149, 255);font-family: Verdana;font-weight: bold;font-size:290%;">.COM</h1> -->
+        <div id="menu" style="padding:10px;float: right;display: inline-table;">
+            <br><br>
+            <a href=""><b>Home</b></a>
+            <a href=""><b>Previos Orders</b></a>
+            <a href=""><b>Account</b></a>
+            <a href=""><b>About Us</b></a>
+            <a href=""><b>Settings</b></a>
+            <a href="sign-in.html" style="background-color: rgba(255, 0, 0, 0.507);"><b>Sign Out</b></a>
+        </div>
+    </div>
+    <br><br>
+
+    <h3 style="text-align: center;">Search Here:
+        <input id="sear" onkeyup="search()" name="search" placeholder="Search Here" type="search" autocomplete="on"
+            style="background-color:rgb(231, 249, 249,0.5);">
+    </h3>
+    <br>
+    <form onsubmit="return avail()" action="payment.html">
+        <div id="b1">
+            <fieldset>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51APkyJzNlL._SX324_BO1,204,203,200_.jpg"
+                    width="85">
+                <h1>The Book Theif<br>4.5*</h1>
+                <h2>By:Markus Zusak <br> <br><span>About the Author:</span><br>
+                    MARKUS ZUSAK is the bestselling author of six novels, including THE BOOK THIEF. His books have been
+                    translated into more than forty languages, to both popular and critical acclaim. He lives in Sydney
+                    with his wife and two children.</h2>
+            </fieldset>
+        </div>
+    </form>
+</body>
+
+</html>
